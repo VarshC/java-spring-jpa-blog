@@ -1,14 +1,17 @@
 package com.pluralsight.blog.data;
 
 import com.pluralsight.blog.model.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.*;
 
 @Component
-public class PostRepository {
+public interface PostRepository extends JpaRepository<Post, Long> {
 
-    private final List<Post> ALL_POSTS = new ArrayList<>(Arrays.asList(
+   /* private final List<Post> ALL_POSTS = new ArrayList<>(Arrays.asList(
             new Post(1l, "Earbuds",
                     "You have got to try these in your ears. So tiny and can even block the sounds of screaming toddlers if you so desire.",
                     "You have got to try these in your ears. So tiny and can even block the sounds of screaming toddlers if you so desire.",
@@ -50,4 +53,6 @@ public class PostRepository {
         }
         return Optional.empty();
     }
+
+    */
 }
